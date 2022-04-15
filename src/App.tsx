@@ -1,5 +1,6 @@
 import React from 'react';
 import Expenses from './components/Expenses/Expenses';
+import NewExpense, { SubmitFormValues } from './components/NewExpense/NexExpense';
 
 type ExpenseData = {
   id: string;
@@ -24,9 +25,14 @@ const App: React.FC = () => {
     },
   ];
 
+  const addExpenseHandler = (expense: SubmitFormValues) => {
+    console.log('In App.js');
+    console.log(expense);
+  }
+
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense expenseAdded={addExpenseHandler} />
       <Expenses expenses={expenses}/>
     </div>
   );

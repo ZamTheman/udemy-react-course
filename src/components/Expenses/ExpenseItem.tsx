@@ -21,4 +21,5 @@ const ExpenseItem: React.FC<Props> = ({ date, title, amount }) => {
   );
 };
 
+
 export default ExpenseItem;
