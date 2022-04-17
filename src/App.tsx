@@ -1,39 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Expenses from './components/Expenses/Expenses';
-import NewExpense, { SubmitFormValues } from './components/NewExpense/NexExpense';
+import NewExpense from './components/NewExpense/NewExpense';
+import { ExpenseData } from './Types/CommonExpeseTypes';
 
-type ExpenseData = {
-  id: string;
-  title: string;
-  amount: number;
-  date: Date;
-};
+const InitialExpenses: ExpenseData[] = [
+  {
+    Id: 'e1',
+    Title: 'Försäkring',
+    Amount: 285,
+    Date: new Date(2022, 4, 18),
+  },
+  {
+    Id: 'e2',
+    Title: 'Fotboll',
+    Amount: 150,
+    Date: new Date(2022, 3, 15),
+  },
+  {
+    Id: 'e3',
+    Title: 'Nice Cheeze',
+    Amount: 92,
+    Date: new Date(2021, 3, 15),
+  }
+];
 
 const App: React.FC = () => {
-  const expenses: ExpenseData[] = [
-    {
-      id: 'e1',
-      title: 'Försäkring',
-      amount: 285,
-      date: new Date(2022, 4, 18),
-    },
-    {
-      id: 'e2',
-      title: 'Fotboll',
-      amount: 150,
-      date: new Date(2022, 3, 15),
-    },
-  ];
+  const [expensesValues, setExpenses] = useState<ExpenseData[]>(InitialExpenses);
 
-  const addExpenseHandler = (expense: SubmitFormValues) => {
-    console.log('In App.js');
-    console.log(expense);
+  const addExpenseHandler = (expense: ExpenseData) => {
+    setExpenses((previousExpenses) => {
+      return [expense, ...previousExpenses];
+    });
   }
 
   return (
     <div>
       <NewExpense expenseAdded={addExpenseHandler} />
-      <Expenses expenses={expenses}/>
+      <Expenses expenses={expensesValues}/>
     </div>
   );
 };

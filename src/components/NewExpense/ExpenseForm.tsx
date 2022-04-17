@@ -9,6 +9,7 @@ export interface FormValues {
 
 interface Props {
   onSubmitedData: (enteredExpenseData: FormValues) => void;
+  onCancelClicked: () => void;
 }
 
 const initValues: FormValues = {
@@ -17,7 +18,10 @@ const initValues: FormValues = {
   Date: '',
 };
 
-const ExpenseForm: React.FC<Props> = ({onSubmitedData}) => {
+const ExpenseForm: React.FC<Props> = ({
+  onSubmitedData,
+  onCancelClicked
+}) => {
   const [formValues, setFormValues] = useState<FormValues>(initValues);
   const onChangeHandler = (event: ChangeEvent) => {
     const target = event.target as HTMLInputElement;
@@ -74,6 +78,9 @@ const ExpenseForm: React.FC<Props> = ({onSubmitedData}) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={onCancelClicked}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>

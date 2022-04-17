@@ -6,8 +6,8 @@ interface Props {
 }
 
 const ExpenseDate: React.FC<Props> = ({ date }) => {
-  const month = date.toLocaleString('en-US', { month: 'long' });
-  const day = date.toLocaleString('en-US', { year: '2-digit' });
+  const month = date.toLocaleString('sv-SE', { month: 'long' });
+  const day = date.toLocaleString('sv-SE', { day: '2-digit' });
   const year = date.getFullYear();
 
   return (
