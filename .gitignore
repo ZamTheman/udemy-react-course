@@ -1,5 +1,6 @@
 # dependencies
 /expenses-app/node_modules
+/todo-app/node_modules
 /node_modules
 
 # testing
@@ -7,6 +8,7 @@
 
 # production
 /expenses-app/build
+/todo-app/build
 /build
 
 # misc
@@ -15,7 +17,10 @@
 npm-debug.log
 /.vscode
 /expenses-app/.vscode
+/todo-app/.vscode
 /expenses-app/.env
+/todo-app/.vscode
 /expenses-app/npm-debug.log
+/todo-app/npm-debug.log
 *.swp
 *.swo
