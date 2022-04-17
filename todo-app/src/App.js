@@ -37,10 +37,10 @@ const App = () => {
 
   return (
     <div>
-      <section id="goal-form">
+      <section id='goal-form'>
         <CourseInput onAddGoal={addGoalHandler} />
       </section>
-      <section id="goals">
+      <section id='goals'>
         {content}
         {/* {courseGoals.length > 0 && (
           <CourseGoalList

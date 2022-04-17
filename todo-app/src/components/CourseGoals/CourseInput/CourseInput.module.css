@@ -8,6 +8,15 @@
   margin-bottom: 0.5rem;
 }
 
+.form-control.invalid label {
+  color: red;
+}
+
+.form-control.invalid input {
+  border-color: red;
+  background: rgb(250, 205, 205);
+}
+
 .form-control input {
   display: block;
   width: 100%;
