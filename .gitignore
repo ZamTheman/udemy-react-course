@@ -1,10 +1,12 @@
 # dependencies
+/expenses-app/node_modules
 /node_modules
 
 # testing
 /coverage
 
 # production
+/expenses-app/build
 /build
 
 # misc
@@ -12,3 +14,8 @@
 .env
 npm-debug.log
 /.vscode
+/expenses-app/.vscode
+/expenses-app/.env
+/expenses-app/npm-debug.log
+*.swp
+*.swo
